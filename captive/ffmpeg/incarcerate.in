@@ -28,11 +28,11 @@ FFMPEG_OPTIONS="$FFMPEG_OPTIONS --disable-shared"
 FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-pic"
 #FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-runtime-cpudetect"
 
-if test "x$CAPTIVE_ENABLE_FFMPEG_GPL" = "xyes"; then
-  FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-gpl --enable-nonfree"
-  # x264 can only be used in GPL mode
-  FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-libx264"
-fi
+#if test "x$CAPTIVE_ENABLE_FFMPEG_GPL" = "xyes"; then
+#  FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-gpl --enable-nonfree"
+#  # x264 can only be used in GPL mode
+#  FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-libx264"
+#fi
 FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-version3"
 
 case $HOST_OS in
@@ -78,7 +78,7 @@ case $HOST_OS in
    FFMPEG_OPTIONS="$FFMPEG_OPTIONS --extra-libs=-lwinmm"
   ;;
 esac
-FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-openssl"
+#FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-openssl"
 FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-zlib"
 FFMPEG_OPTIONS="$FFMPEG_OPTIONS --enable-libvpx"
 
