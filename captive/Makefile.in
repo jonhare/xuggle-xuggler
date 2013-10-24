@@ -98,7 +98,7 @@ AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
 ETAGS = etags
 CTAGS = ctags
 DIST_SUBDIRS = zlib libvpx openssl librtmp libvo-aacenc \
-	libopencore-amr libogg libspeex libvorbis libtheora libmp3lame \
+	libopencore-amr libogg libspeex libvorbis libtheora \
 	libx264 ffmpeg
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
@@ -301,7 +301,7 @@ EXTRA_DIST = COPYING
 
 #SUBDIRS+= liboil
 SUBDIRS = zlib libvpx openssl librtmp libvo-aacenc libopencore-amr \
-	libogg libspeex libvorbis libtheora libmp3lame $(am__append_1) \
+	libogg libspeex libvorbis libtheora $(am__append_1) \
 	ffmpeg
 all: all-recursive
 
