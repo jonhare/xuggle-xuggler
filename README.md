@@ -7,6 +7,8 @@ GPL licensed version of the source code along with an LGPL
 variant. This trial-and-error build knowledge has been put into
 the [build-help.txt](https://github.com/e-d/xuggle-xuggler/blob/master/build-help.txt) file. 
 
+To view a formatted version of build-help.txt (with links) you can [click here](https://docs.google.com/document/d/1mjlI2jAGKK3_W4KIBjpUfM3F_SJjUkZhQJuwtIBn_7I/pub).
+
 This file contains the steps taken to successfully build the latest 5.5 source code for:
 - Windows (32-bit) (via cross-compiling on Linux)
 - Windows (64-bit) (via cross-compiling on Linux)
