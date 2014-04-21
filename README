@@ -1,6 +1,12 @@
 Welcome to Xuggle-Xuggler-Main (a.k.a. Xuggler)
 http://www.xuggle.com/xuggler
 
+
+= UPDATE =
+Please read build-help.txt for steps to successfully build the
+latest 5.5 code for Windows and Linux (32 and 64 bit).
+
+
 = Licensing =
 
 Xuggler is licensed under the Lesser GNU Public License, but if
