@@ -17,12 +17,13 @@ Changes to help build the LGPL version of the binaries were done
 in the [jawallace/xuggle-xuggler](https://github.com/jawallace/xuggle-xuggler) fork.
 
 
-## Original README from [xuggle/xuggle-xuggler](https://github.com/artclarke/xuggle-xuggler) base project
+## README from [xuggle/xuggle-xuggler](https://github.com/artclarke/xuggle-xuggler) base project
 
-Welcome to Xuggle-Xuggler-Main (a.k.a. Xuggler)
+###Welcome to Xuggle-Xuggler-Main (a.k.a. Xuggler)
+
 http://www.xuggle.com/xuggler
 
-= Licensing =
+#### Licensing
 
 Xuggler is licensed under the Lesser GNU Public License, but if
 compiled with a GPL version of FFmpeg, then Xuggler assumes
@@ -34,22 +35,18 @@ COPYING.LESSER file.
 For the license used in libraries in the 'captive' directory,
 see the captive directory.
 
-= What is Xuggler ? =
+#### What is Xuggler?
 
 Xuggler is a Java library that allows you to decode and
 encode a variety of media file formats directly from Java.
 
 It is built on top of the FFMPEG (http://ffmpeg.org/), but
 is designed with the following goals:
-    *  Ease of Use: Provide the power of FFMPEG with an
-       easier learning curve for developers.
-    *  Safety: Run natively inside a Virtual Machines
-       (e.g. Java) and servers, but minimize the odds
-       of incorrect coding of native FFMPEG code causing crashes
-    *  Portability: Write portable code that should run most places
-       where FFMPEG can run
+- Ease of Use: Provide the power of FFMPEG with an easier learning curve for developers.
+- Safety: Run natively inside a Virtual Machines (e.g. Java) and servers, but minimize the odds of incorrect coding of native FFMPEG code causing crashes.
+- Portability: Write portable code that should run most places where FFMPEG can run.
 
-= What languages are supported? =
+#### What languages are supported?
 
 Today Xuggler works under Java
 
@@ -64,7 +61,7 @@ People can also use the C++ api directly, but bear in mind three caveats:
   linking this C++ library on Windows can be difficult if you're
   using Microsoft's Visual C++ compiler.
 
-= How to use Xuggle? =
+#### How to use Xuggle?
 
 You must first build and install Xuggle for the operating
 system you will use it on.  Unlike most Java libraries,
@@ -76,7 +73,8 @@ See the INSTALL file for instructions.
 Once installed, just make sure your Java program references
 xuggle-xuggler.jar, and you should be able to use the API.
 
-= Where can I find documentation? =
+#### Where can I find documentation?
+
 Visit http://www.xuggle.com/xuggler/doc
 
 or build the documentaiton yourself:
@@ -89,7 +87,8 @@ Currently the Java docs are auto-generated from the C++ docs and
 there are quite a few bugs with that.  If you're not getting
 what you need from the Java docs, then please, check out the C++ docs.
 
-= Where can I find out more? =
+#### Where can I find out more?
+
 Visit:
 http://www.xuggle.com/xuggler
 
