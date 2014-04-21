@@ -1,11 +1,24 @@
+# Xuggler
+
+## What's different in this fork?
+
+Time has been spent in trying to successfully build the original
+GPL licensed version of the source code along with an LGPL
+variant. This trial-and-error build knowledge has been put into
+the [build-help.txt](https://github.com/e-d/xuggle-xuggler/blob/master/AUTHORS) file. This file contains the steps taken to 
+successfully build the latest 5.5 source code for:
+- Windows (32-bit) (via cross-compiling on Linux)
+- Windows (64-bit) (via cross-compiling on Linux)
+- Linux (32-bit)
+- Linux (64-bit)
+
+Changes to help build the LGPL version of the binaries were done
+in the [jawallace/xuggle-xuggler](https://github.com/jawallace/xuggle-xuggler) fork.
+
+## Original README from [xuggle/xuggle-xuggler](https://github.com/artclarke/xuggle-xuggler) base project
+
 Welcome to Xuggle-Xuggler-Main (a.k.a. Xuggler)
 http://www.xuggle.com/xuggler
-
-
-= UPDATE =
-Please read build-help.txt for steps to successfully build the
-latest 5.5 code for Windows and Linux (32 and 64 bit).
-
 
 = Licensing =
 
