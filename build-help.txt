@@ -1,0 +1,115 @@
+Building Xuggle Xuggler (GPL and LGPL Licensed Versions)
+
+[Linux 32-bit, Linux 64-bit, Windows 32-bit, Windows 64-bit]
+
+To build the Xuggle Xuggler library, you will need two Linux virtual machines running Ubuntu 11.10 (32-bit and 64-bit operating systems). A 32-bit version of the OS is required to build Linux 32-bit, cross compiling Windows 32-bit, and cross compiling Windows 64-bit binaries. A 64-bit version of the OS is required to build Linux 64-bit binaries.
+
+Using VirtualBox, I created the two virtual machines discussed above with the ubuntu-11.10-server-i386.iso and ubuntu-11.10-server-amd64.iso disk images. These are headless server versions of Ubuntu. After installation of the OS, follow these steps to build Xuggler (you are welcome to try different dependency versions and not use the root user, but this is what I did to build successfully):
+
+Change to root user:
+
+sudo su
+
+Just use root’s home directory:
+
+cd /root
+
+Update apt-get to use specific repository:
+
+apt-get install python-software-properties
+add-apt-repository ppa:ferramroberto/java
+apt-get update
+
+Install Java:
+
+apt-get install sun-java6-jdk sun-java6-plugin
+
+Verify the HotSpot Java 6 JVM is the default java:
+
+java -version
+
+If the incorrect version of Java appears, configure the default by running:
+
+sudo update-alternatives --config java
+
+Install gcc, g++, make and all the other build essentials:
+
+apt-get install build-essential
+
+Install YASM:
+
+apt-get install yasm
+
+Install Open SSL:
+
+apt-get install openssl
+
+Install Package Config:
+
+apt-get install pkg-config
+
+Install Git:
+
+apt-get install git
+
+Install Ant:
+
+apt-get install ant-optional
+
+Install JUnit:
+
+apt-get install junit
+
+Install MingGW to be able to build for Windows (mingw-w64 can do 32 and 64-bit Windows):
+
+apt-get install mingw-w64
+
+Download the LGPL configured Xuggle source code (Ed’s fork of the code from Jeff Wallace’s fork from the original GPL xuggle code) or the original GPL version:
+
+LGPL: git clone https://github.com/e-d/xuggle-xuggler.git
+GPL: git clone https://github.com/xuggle/xuggle-xuggler.git 
+
+Compile and build the JAR files (with binaries inside). Be sure to run the 64-bit Linux build on the 64-bit version of Ubuntu. Also note that between builds you will need to run “ant clobber” to remove all of the compiled files from the previous architecture. To build run:
+
+(32/64-bit Linux): ant stage
+(64-bit Windows): ant -Dbuild.configure.os=x86_64-w64-mingw32 stage
+(32-bit Windows): ant -Dbuild.configure.os=i686-w64-mingw32 stage
+
+The JAR files will be in the /dist/lib directory.
+
+If you need the Linux binaries to additionally work on CentOS, you’ll now need to change the version of GCC and G++ to use 3.4 instead of 3.6.
+
+Install GCC 4.4:
+
+apt-get install gcc-4.4
+
+Update symbolic links to use 4.4 (the arch-specific link will be different on 32-bit VM):
+
+rm /usr/bin/gcc
+ln -s /usr/bin/gcc-4.4 /usr/bin/gcc
+rm /usr/bin/x86_64-linux-gnu-gcc
+ln -s /usr/bin/x86_64-linux-gnu-gcc-4.4 /usr/bin/x86_64-linux-gnu-gcc
+
+Install C++ (G++) 4.4:
+
+apt-get install c++-4.4
+
+Update symbolic links to use 4.4 (the arch-specific link will be different on 32-bit VM):
+
+rm /usr/bin/cpp
+ln -s /usr/bin/cpp-4.4 /usr/bin/cpp
+rm /usr/bin/x86_64-linux-gnu-cpp
+ln -s /usr/bin/x86_64-linux-gnu-cpp-4.4 /usr/bin/x86_64-linux-gnu-cpp
+rm /usr/bin/g++
+ln -s /usr/bin/g++-4.4 /usr/bin/g++
+rm /usr/bin/x86_64-linux-gnu-g++
+ln -s /usr/bin/x86_64-linux-gnu-g++-4.4 /usr/bin/x86_64-linux-gnu-g++
+
+Verify default versions:
+
+gcc --version
+c++ --version
+cpp --version
+gcc --version
+
+You can now run the builds the same way as before (you only need to re-build Linux binaries). The binaries will now be compatible with slightly older versions of many Linux distros (including CentOS compatibility). These 4.4 compiled binaries should still work everywhere the 4.6 compiled versions would run too.
