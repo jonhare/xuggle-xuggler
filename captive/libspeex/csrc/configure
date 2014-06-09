@@ -12982,7 +12982,7 @@ if test "${enable_sse+set}" = set; then :
   enableval=$enable_sse;
 if test "x$enableval" != xno; then
 has_sse=yes
-CFLAGS="$CFLAGS -O3 -msse"
+CFLAGS="$CFLAGS -O3"
 else
 has_sse=no
 fi
@@ -13012,12 +13012,10 @@ $as_echo "#define FLOATING_POINT /**/" >>confdefs.h
 
 fi
 
-
-if test "$has_sse" = yes; then
-
-$as_echo "#define _USE_SSE /**/" >>confdefs.h
-
-fi
+# Remove for building on raspberry pi.
+#if test "$has_sse" = yes; then
+#$as_echo "#define _USE_SSE /**/" >>confdefs.h
+#fi
 
 # Check whether --enable-float-api was given.
 if test "${enable_float_api+set}" = set; then :
