@@ -42,6 +42,7 @@ class JNIManifest {
     X86_64,
     PPC,
     PPC64,
+    ARM,
     UNKNOWN,
   }
   enum OS {
@@ -250,8 +251,9 @@ class JNIManifest {
     final JNIEnv.CPUArch javaArch;
     final JNIEnv.CPUArch nativeArch;
     final String nativeCpu = aNativeCpu.toLowerCase();
-    
+   
     javaArch = JNIEnv.getEnv().getCPUArch();
+      
     if (nativeCpu.startsWith("universal"))
       // a special case where the native library claims to not care about arch.
       // this only happens on Mac/Darwin with universal builds.
@@ -259,6 +261,8 @@ class JNIManifest {
     else
       nativeArch = JNIEnv.getCPUArchFromGNUString(nativeCpu);
   
+    log.trace("CPU test: nativeArch: {}; javaArch: {}; nativeCpu: {}", new Object[]{nativeArch, javaArch, nativeCpu});
+      
     // then compare
     return (nativeArch != JNIEnv.CPUArch.UNKNOWN && nativeArch == javaArch);
   }

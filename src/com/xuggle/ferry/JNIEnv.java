@@ -41,6 +41,8 @@ public class JNIEnv
     PPC,
     /** 64-bit PowerPC based systems */
     PPC64,
+    /** ARM based systems */
+    ARM,
     /** A chip architecture unknown to {@link Ferry}. */
     UNKNOWN,
   }
@@ -110,6 +112,10 @@ public class JNIEnv
         )
     {
       javaArch = CPUArch.X86;
+    } else if (
+        javaCPUArch.equals("arm")
+        ) {
+       javaArch = CPUArch.ARM;
     } else {
       javaArch = CPUArch.UNKNOWN;
     }
@@ -148,6 +154,10 @@ public class JNIEnv
         nativeCpu.contains("86")
         )
       nativeArch = CPUArch.X86;
+    else if (
+        nativeCpu.startsWith("arm")
+        )
+      nativeArch = CPUArch.ARM;
     else
       nativeArch = CPUArch.UNKNOWN;
  
